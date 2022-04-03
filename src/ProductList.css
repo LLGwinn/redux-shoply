@@ -11,3 +11,8 @@
     background-color: red;
     color: black;
 }
+
+.ProductList a {
+    text-decoration: none;
+    color: black;
+}

@@ -1,7 +1,7 @@
 import './App.css';
 import {useSelector, useDispatch, shallowEqual} from 'react-redux';
 import { addToCart, removeFromCart } from './actions';
-import ProductList from './ProductList';
+import AppRoutes from './AppRoutes';
 
 function App() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ProductList addItem={addItem} removeItem={removeItem}/>
+        <AppRoutes addItem={addItem} removeItem={removeItem}/>
       </header>
     </div>
   );

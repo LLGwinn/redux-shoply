@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {shallowEqual, useSelector} from 'react-redux';
 import './ProductList.css';
 import {Button, Table} from 'reactstrap';
@@ -32,7 +33,9 @@ function ProductList( {addItem, removeItem}) {
                 <tbody>
                     {productArray.map(product =>
                         <tr key={product[0]} id='product-row' data-product={product}>
-                            <td className='text-start'>{product[1].name}</td>
+                            <td className='text-start'>
+                                <Link to={`products/${product[0]}`}>{product[1].name}</Link>
+                            </td>
                             <td className='text-end'>${product[1].price}</td>
                             <td>
                                 <Button className='ProductList-add btn-sm'

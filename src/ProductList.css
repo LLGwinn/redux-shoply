@@ -1,0 +1,13 @@
+.ProductList li {
+    text-align: left;
+}
+
+.ProductList-add {
+    background-color: green;
+    margin: 5px 10px;
+}
+
+.ProductList-remove {
+    background-color: red;
+    color: black;
+}

@@ -1,0 +1,14 @@
+.Product-img {
+    width: 200px;
+    margin: auto;
+}
+
+.Product-addBtn {
+    background-color: green;
+    margin: 5px;
+}
+
+.Product-removeBtn {
+    background-color: red;
+    margin: 5px;
+}

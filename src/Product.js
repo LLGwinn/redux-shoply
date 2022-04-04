@@ -24,7 +24,7 @@ function Product( {addItem, removeItem} ) {
 
     const add = (evt) => {
         evt.preventDefault();
-        addItem(product);
+        addItem(product, 1);
     }
 
     const remove = (evt) => {
@@ -33,32 +33,36 @@ function Product( {addItem, removeItem} ) {
     }
 
     return (
-        <Card className="Product-card">
-            <CardImg className='Product-img'
-                alt="product image"
-                src={product.image_url}
-                top
-            />
-            <CardBody>
-                <CardTitle tag="h4" className="text-dark">
-                    {product.name}
-                </CardTitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                    ${product.price}
-                </CardSubtitle>
-                <CardText className="text-dark" tag="p">
-                    {product.description}
-                </CardText>
-                <Button className='Product-addBtn btn-sm' onClick={add}>
-                    Add to Cart
-                </Button>
-                <Button className='Product-removeBtn btn-sm' onClick={remove}>
-                    Remove from Cart
-                </Button>
-            </CardBody>
-        </Card>
-        
-        
+        <div>
+            <Card className="Product-card">
+                <CardImg className='Product-img'
+                    alt="product image"
+                    src={product.image_url}
+                    top
+                />
+                <CardBody>
+                    <CardTitle tag="h4" className="text-dark">
+                        {product.name}
+                    </CardTitle>
+                    <CardSubtitle className="mb-2 text-muted" tag="h6">
+                        ${product.price}
+                    </CardSubtitle>
+                    <CardText className="text-dark" tag="p">
+                        {product.description}
+                    </CardText>
+                    <Button className='Product-addBtn btn-sm' onClick={add}>
+                        Add to Cart
+                    </Button>
+                    <Button className='Product-removeBtn btn-sm' onClick={remove}>
+                        Remove from Cart
+                    </Button>
+                </CardBody>
+            </Card>
+            <p></p>
+            <Button>
+                <Link className='Product-homeBtn' to='/'>Home</Link>   
+            </Button>
+        </div>
     )
 }
 

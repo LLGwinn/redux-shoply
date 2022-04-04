@@ -12,7 +12,10 @@ function ProductList( {addItem, removeItem}) {
     const getCartTotal = () => {
         let totalCart = 0;
         for (let item of currentCart) {
-            const itemPrice = item[1].price;
+            let itemPrice = item[1].price;
+            if (item[1].qty) {
+                itemPrice = item[1].price * item[1].qty;
+            }
             totalCart += itemPrice;
         }
         return totalCart;
@@ -39,7 +42,7 @@ function ProductList( {addItem, removeItem}) {
                             <td className='text-end'>${product[1].price}</td>
                             <td>
                                 <Button className='ProductList-add btn-sm'
-                                        onClick={() => addItem(product)}>
+                                        onClick={() => addItem(product, 1)}>
                                     Add to Cart
                                 </Button>
                             </td>
@@ -53,7 +56,9 @@ function ProductList( {addItem, removeItem}) {
                     )} 
                 </tbody>
             </Table>
-            <h2>Your cart total: ${getCartTotal()}</h2>
+            <h2>Your cart total: ${getCartTotal()}
+            <span className='fs-6'><Link to='/cart'>&nbsp;&nbsp;&nbsp;&nbsp;(see cart)</Link></span>
+            </h2>
         </div>
     )
 }

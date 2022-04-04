@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "./actionTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_ITEM_QTY } from "./actionTypes";
 import data from './data.json';
 
 const INITIAL_STATE = {inventory: data.products,
@@ -7,7 +7,9 @@ const INITIAL_STATE = {inventory: data.products,
 function rootReducer(state=INITIAL_STATE, action) {
     switch(action.type) {
         case ADD_TO_CART:
-            return ({...state, cart: [...state.cart, action.payload]});
+            return ({...state, cart: [...state.cart, action.product]});
+        case UPDATE_ITEM_QTY:
+            return({...state, cart: action.updatedCart});
         case REMOVE_FROM_CART:
             return ({...state, 
                 cart: state.cart.filter(item => item[0] !== action.payload[0])});
